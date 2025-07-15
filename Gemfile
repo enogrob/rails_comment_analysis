@@ -50,3 +50,5 @@ group :development, :test do
 end
 
 gem "aasm", "~> 5.5"
+
+gem "httparty", "~> 0.23.1"
