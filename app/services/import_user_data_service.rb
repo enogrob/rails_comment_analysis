@@ -16,7 +16,14 @@ class ImportUserDataService
       post_record = Post.find_or_create_by(user: user_record, external_id: post['id'], title: post['title'], body: post['body'])
       comments = fetch_comments(post['id'])
       comments.each do |comment|
-        Comment.find_or_create_by(post: post_record, external_id: comment['id'], body: comment['body'], state: 'new')
+        translated = TranslateService.translate(comment['body'])
+        Comment.find_or_create_by(
+          post: post_record, 
+          external_id: comment['id'], 
+          body: comment['body'], 
+          translated_body: translated,
+          state: 'new'
+        )
       end
     end
   end
