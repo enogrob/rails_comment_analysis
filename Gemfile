@@ -56,3 +56,5 @@ gem "httparty", "~> 0.23.1"
 gem "descriptive_statistics", "~> 2.5"
 
 gem "sidekiq", "~> 8.0"
+
+gem "redis", "~> 5.4"

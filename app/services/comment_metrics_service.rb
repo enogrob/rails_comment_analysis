@@ -1,13 +1,27 @@
 class CommentMetricsService
+  CACHE_TTL = 10.minutes
+
   # Calculates metrics for a given user's comments and for all comments (group)
   def self.calculate_for_user(user)
+    cache_key = "user_metrics:#{user.id}"
+    cached = $redis.get(cache_key)
+    return JSON.parse(cached) if cached
+
     comments = Comment.where(post: user.posts)
-    calculate_metrics(comments)
+    metrics = calculate_metrics(comments)
+    $redis.set(cache_key, metrics.to_json, ex: CACHE_TTL)
+    metrics
   end
 
   def self.calculate_for_group
+    cache_key = "group_metrics"
+    cached = $redis.get(cache_key)
+    return JSON.parse(cached) if cached
+
     comments = Comment.all
-    calculate_metrics(comments)
+    metrics = calculate_metrics(comments)
+    $redis.set(cache_key, metrics.to_json, ex: CACHE_TTL)
+    metrics
   end
 
   # Calculates mean, median, and standard deviation for comment body lengths
