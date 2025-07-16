@@ -1,6 +1,6 @@
 # **Project Comment Analysis**
 
-[Homepage](https://github.com/enogrob/rails-comment-analysis)
+[Homepage](https://github.com/enogrob/rails_comment_analysis)
 
 ![rails image](public/rails.png)
 
@@ -20,24 +20,20 @@
 
 ## Summary
 
-**Project Comment Analysis** is a Ruby on Rails 8 API application designed to automate the import, translation, analysis, and approval of user-generated comments from external sources. The system fetches user, post, and comment data from a public API, translates comment bodies, and applies keyword-based approval logic. It is built for developers, data analysts, and teams seeking to automate comment moderation and gain insights into comment quality and trends.
+**Rails Comment Analysis** is a Ruby on Rails 8 API application designed to automate the import, translation, analysis, and approval of user-generated comments from external sources. The system fetches user, post, and comment data from a public API, translates comment bodies, and applies keyword-based approval logic. It is built for developers, data analysts, and teams seeking to automate comment moderation and gain insights into comment quality and trends.
 
 **Key features:**
 - Automated import of users, posts, and comments from external APIs
 - Real-time translation of comment bodies using LibreTranslate
 - Keyword-based comment approval and rejection
-- Statistical analysis of comment lengths (mean, median, stddev)
-- RESTful and legacy API endpoints for analysis, progress, and keyword management
-- Background processing with Sidekiq and Redis for scalable analysis
-- Full test coverage with RSpec and SimpleCov
-
-**Target audience:**
-This project is ideal for teams building moderation tools, researchers analyzing comment data, and developers seeking a reference for layered Rails API architecture with background jobs and external integrations.
+- **Statistical analysis** of comment lengths (mean, median, stddev)
+- **RESTful and legacy API endpoints** for analysis, progress, and keyword management
+- **Background processing** with Sidekiq and Redis for scalable analysis
+- **Full test coverage** with RSpec and SimpleCov
 
 **Relevance:**
-The project demonstrates best practices in Rails API design, background job processing, and test-driven development. Its modular, service-oriented structure and use of modern gems make it a strong reference for scalable, maintainable API projects.
+The project demonstrates best practices in Rails API design (well-aligned with SOLID principles) background job processing, and test-driven development. Its modular, service-oriented structure and use of modern gems make it a strong reference for scalable, maintainable API projects.
 
----
 
 ## Architecture
 
@@ -79,7 +75,6 @@ flowchart TD
     KeywordsController --> CommentApprovalService
 ```
 
----
 
 #### Alternative Perspectives
 
@@ -197,11 +192,11 @@ gitGraph
 
 #### Decisions made
 
-- Layered architecture: controllers, services, models, workers
-- Service objects encapsulate business logic (import, metrics, approval, translation)
-- Sidekiq for background jobs; Redis for caching and queueing
-- RESTful and legacy endpoints for compatibility
-- Full test coverage enforced
+- **Layered architecture:** controllers, services, models, workers
+- **Service objects** encapsulate business logic (import, metrics, approval, translation)
+- **Sidekiq** for background jobs; Redis for caching and queueing
+- **RESTful and legacy endpoints** for compatibility
+- **Full test coverage** enforced
 
 #### Statistical formulas
 
@@ -287,7 +282,6 @@ curl -X DELETE http://localhost:3000/keywords/1
 - **CommentMetricsService:** Calculates statistics for comment lengths
 - **AnalyzeUserWorker:** Runs import and metrics in background
 
----
 
 ## Tech Stack
 
@@ -300,11 +294,10 @@ curl -X DELETE http://localhost:3000/keywords/1
 - RSpec, FactoryBot, SimpleCov (testing)
 - Docker (deployment)
 
----
 
 ## References
 
-- [Project Homepage](https://github.com/enogrob/rails-comment-analysis)
+- [Project Homepage](https://github.com/enogrob/rails_comment_analysis)
 - [Rails Guides](https://guides.rubyonrails.org/)
 - [Sidekiq Documentation](https://sidekiq.org/)
 - [LibreTranslate API](https://libretranslate.com/docs/)
