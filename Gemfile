@@ -49,6 +49,10 @@ group :development, :test do
   gem 'factory_bot_rails'
 end
 
+group :test do
+  gem 'simplecov', require: false
+end
+
 gem "aasm", "~> 5.5"
 
 gem "httparty", "~> 0.23.1"
