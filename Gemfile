@@ -52,3 +52,5 @@ end
 gem "aasm", "~> 5.5"
 
 gem "httparty", "~> 0.23.1"
+
+gem "descriptive_statistics", "~> 2.5"
