@@ -17,13 +17,14 @@ class ImportUserDataService
       comments = fetch_comments(post['id'])
       comments.each do |comment|
         translated = TranslateService.translate(comment['body'])
-        Comment.find_or_create_by(
+        comment_record = Comment.find_or_create_by(
           post: post_record, 
           external_id: comment['id'], 
           body: comment['body'], 
           translated_body: translated,
           state: 'new'
         )
+        CommentApprovalService.approve_or_reject(comment_record)
       end
     end
   end
