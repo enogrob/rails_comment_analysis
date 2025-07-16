@@ -177,15 +177,26 @@ flowchart LR
 
 ```mermaid
 gitGraph
-   commit id: "rails-initial-setup"
-   commit id: "rspec-initial-setup"
-   commit id: "model-initial-setup"
-   commit id: "service-initial-setup"
-   commit id: "controller-routes-initial-setup"
-   commit id: "add-sidekiq-redis"
-   commit id: "add-tests"
-   commit id: "add-simplecov"
-   commit id: "add-readme"
+   commit id: "setup-rails"
+   commit id: "rspec-setup"
+   commit id: "add-models-and-migrations"
+   commit id: "setup-aasm-for-comments"
+   commit id: "setup-import-service-pipeline"
+   commit id: "setup-translation-service"
+   commit id: "setup-comment-approval-service"
+   commit id: "setup-comment-metrics-service"
+   commit id: "setup-endpoints"
+   commit id: "setup-sidekiq-and-redis"
+   commit id: "add-caching"
+   commit id: "add-caching-users-change"
+   commit id: "add-reprocessing-on-keyword-change"
+   commit id: "setup-unit-tests"
+   commit id: "setup-integration-tests"
+   commit id: "add-test-coverage"
+   commit id: "add-functional-tests"
+   commit id: "increase-test-coverage"
+   commit id: "add-README"
+   commit id: "update-README"
 ```
 
 </details>
