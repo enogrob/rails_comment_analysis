@@ -1,4 +1,5 @@
 class Keyword < ApplicationRecord
+  validates :word, presence: true
   after_commit :invalidate_metrics_cache_and_reprocess_comments
 
   private
