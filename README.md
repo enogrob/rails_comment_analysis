@@ -23,9 +23,9 @@
 **Rails Comment Analysis** is a Ruby on Rails 8 API application designed to automate the import, translation, analysis, and approval of user-generated comments from external sources. The system fetches user, post, and comment data from a public API, translates comment bodies, and applies keyword-based approval logic. It is built for developers, data analysts, and teams seeking to automate comment moderation and gain insights into comment quality and trends.
 
 **Key features:**
-- Automated import of users, posts, and comments from external APIs
-- Real-time translation of comment bodies using LibreTranslate
-- Keyword-based comment approval and rejection
+- **Automated import** of users, posts, and comments from external APIs
+- **Real-time translation** of comment bodies using LibreTranslate
+- **Keyword-based** comment approval and rejection
 - **Statistical analysis** of comment lengths (mean, median, stddev)
 - **RESTful and legacy API endpoints** for analysis, progress, and keyword management
 - **Background processing** with Sidekiq and Redis for scalable analysis
