@@ -8,7 +8,10 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   # root "posts#index"
 
-  post '/analyze', to: 'analysis#create'
+  # Legacy route for AnalyzeController (for test coverage)
+  post '/analyze', to: 'analyze#create'
+  # Main route for AnalysisController
+  post '/analysis', to: 'analysis#create'
   get '/progress/:job_id', to: 'progress#show'
   resources :keywords
 end

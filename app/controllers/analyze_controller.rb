@@ -6,6 +6,7 @@ class AnalyzeController < ApplicationController
       return
     end
     ImportUserDataService.new(username).call
-    render json: { message: "Import started for #{username}" }, status: :accepted
+    job_id = SecureRandom.uuid # Simulate a job_id for legacy endpoint
+    render json: { job_id: job_id, message: "Import started for #{username}" }, status: :accepted
   end
 end
